@@ -22,7 +22,7 @@ pipeline:
             shell: bash
             script: "pwd
 
-              echo\"Hellow-World\""
+              echo \"Hellow-World\""
           id: step1
         - name: push image to dockerhub
           id: push_image_to_dockerhub
