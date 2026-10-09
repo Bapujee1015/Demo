@@ -1,0 +1,19 @@
+pipeline:
+  stages:
+    - steps:
+        - name: Build
+          id: Build
+          build:
+            uses: gitCloneStep
+            with:
+              connector: demo_github
+              repo_name: https://github.com/Bapujee1015/Demo
+              build:
+                target: Git Branch
+                branch: main
+              pr_merge_strategy: Source Branch
+              depth: "50"
+              lfs_enabled: false
+              debug: false
+              fetch_tags: false
+              insecure: false
