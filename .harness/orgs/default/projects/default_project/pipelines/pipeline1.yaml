@@ -17,3 +17,30 @@ pipeline:
               debug: false
               fetch_tags: false
               insecure: false
+        - name: step1
+          run:
+            shell: bash
+            script: "pwd\r
+
+              \r
+
+              ls -la\r
+
+              \r
+
+              echo\"Hellow-World\""
+          id: step1
+        - name: push image to dockerhub
+          id: push_image_to_dockerhub
+          build:
+            uses: buildAndPushToDocker
+            with:
+              connector: connector_Docker
+              repo: bapujee105/hello-app
+              tags:
+                - v3
+              caching: false
+              build_mode: build_and_push
+              plugin_cloud: buildx
+              dockerfile: Demo/hello-app/Dockerfile
+              context: Demo/hello-app
