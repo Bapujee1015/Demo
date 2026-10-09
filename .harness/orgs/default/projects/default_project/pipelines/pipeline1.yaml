@@ -20,13 +20,7 @@ pipeline:
         - name: step1
           run:
             shell: bash
-            script: "pwd\r
-
-              \r
-
-              ls -la\r
-
-              \r
+            script: "pwd
 
               echo\"Hellow-World\""
           id: step1
